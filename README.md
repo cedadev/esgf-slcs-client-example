@@ -1,6 +1,7 @@
 # esgf-slcs-client-example
 
-This project provides an example client application for the ESGF SLCS Server using
+This project provides an example client application for the
+[ESGF SLCS Server](https://github.com/cedadev/esgf-slcs-server) using
 the [Flask](http://flask.pocoo.org/) library to provide a light-weight web application
 and the [OAuthLib extensions](https://requests-oauthlib.readthedocs.io) for the
 [Requests library](http://docs.python-requests.org/en/master/) for the OAuth interactions.
