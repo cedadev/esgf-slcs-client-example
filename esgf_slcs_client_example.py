@@ -2,6 +2,7 @@
 This file contains an example web application that interacts with an ESGF SLCS Server.
 """
 
+import subprocess
 from pprint import pformat
 from time import time
 from base64 import b64encode
@@ -186,9 +187,16 @@ def get_certificate():
         data = { 'certificate_request' : b64encode(cert_request) },
         verify = False
     )
+    # Convert the certificate into a human readable form using openssl commands
+    openssl = subprocess.Popen(
+        ['openssl', 'x509', '-text'],
+        stdin = subprocess.PIPE, stdout = subprocess.PIPE, stderr = subprocess.STDOUT,
+        universal_newlines = True
+    )
+    stdout, stderr = openssl.communicate(input = response.text)
     if response.status_code == 200:
         # If the response is a 200 OK, it should contain a certificate
-        content = "<pre>{}</pre><pre>{}</pre>".format(private_key, response.text)
+        content = "<pre>{}</pre><pre>{}</pre>".format(stdout, private_key)
     else:
         # All other status codes are an error
         content = "<pre>ERROR: {} {}</pre>".format(response.status_code, response.reason)
