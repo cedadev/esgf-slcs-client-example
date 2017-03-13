@@ -18,9 +18,9 @@ from OpenSSL import crypto
 ## SETTINGS - MODIFY TO REFLECT YOUR SETUP
 ################################################################################
 
-esgf_slcs_server = 'https://172.28.128.5'
-client_id = "x5NsqSVC2bmvDwfLywYl6PNGcfRW932ih3tH29yq"
-client_secret = "oCBCvsTnNDs2Wd6YxsAmLCnWPhNzYgqCsxhDbAeC3oZVX1eObAqs13R2ttVDnYvdFgqlYU2y12R5VMTBy7tvYRm8kEyQJ7czHBPqYQ7U7oelRF2G9E83JkkwG6OYDewA"
+esgf_slcs_server = 'https://www.my-slcs-server.com'
+client_id = "<oauth client id>"
+client_secret = "<oauth client secret>"
 
 ################################################################################
 ## END SETTINGS

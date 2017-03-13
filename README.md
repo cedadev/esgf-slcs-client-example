@@ -21,3 +21,5 @@ $ pyvenv venv
 $ venv/bin/pip install flask requests-oauthlib pyopenssl
 $ venv/bin/python esgf_slcs_client_example.py
 ```
+
+Then visit http://localhost:5000 to begin.
