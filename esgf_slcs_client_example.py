@@ -18,7 +18,12 @@ from OpenSSL import crypto
 ## SETTINGS - MODIFY TO REFLECT YOUR SETUP
 ################################################################################
 
-esgf_slcs_server = 'https://www.my-slcs-server.com'
+slcs_server = 'https://www.my-slcs-server.com'
+authorize_url = "{}/oauth/authorize".format(slcs_server)
+token_url = "{}/oauth/token".format(slcs_server)
+refresh_url = token_url
+certificate_url = "{}/oauth/certificate/".format(slcs_server)
+scope = [certificate_url]
 client_id = "<oauth client id>"
 client_secret = "<oauth client secret>"
 
@@ -33,11 +38,6 @@ client_secret = "<oauth client secret>"
 #log.addHandler(logging.StreamHandler(sys.stdout))
 #log.setLevel(logging.DEBUG)
 
-authorize_url = "{}/oauth/authorize".format(esgf_slcs_server)
-token_url = "{}/oauth/access_token".format(esgf_slcs_server)
-refresh_url = token_url
-certificate_url = "{}/oauth/certificate/".format(esgf_slcs_server)
-scope = [certificate_url]
 redirect_uri = 'http://localhost:5000/oauth_callback'
 
 app = Flask(__name__)
